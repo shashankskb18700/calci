@@ -40,27 +40,17 @@ const App = () => {
   
   return (
     <div className="calv">
-      <input type="text" onChange={(e) => setA(e.target.value)} value={a} />
+      <input
+        type="text"
+        className="inp"
+        onChange={(e) => setA(e.target.value)}
+        value={a}
+      />
+      <div>
+        <div className="abo">{r}</div>
+      </div>
       {/* <input type="number" onChange={(e) => setA(e.target.value)} /> */}
       {/* <input type="number" onChange={(e) => setB(e.target.value)} /> */}
-
-      <div className="but">
-        <button type="button" onClick={() => setA(a + "+")}>
-          +
-        </button>
-
-        <button type="button" onClick={() => setA(a + "-")}>
-          -
-        </button>
-
-        <button type="button" onClick={() => setA(a + "*")}>
-          *
-        </button>
-
-        <button type="button" onClick={() => setA(a + "/")}>
-          /
-        </button>
-      </div>
 
       <div>
         <button type="button" onClick={() => setA(a + "1")}>
@@ -71,6 +61,9 @@ const App = () => {
         </button>
         <button type="button" onClick={() => setA(a + "3")}>
           3
+        </button>
+        <button type="button" className="symb" onClick={() => setA(a + "+")}>
+          +
         </button>
       </div>
 
@@ -84,6 +77,9 @@ const App = () => {
         <button type="button" onClick={() => setA(a + "6")}>
           6
         </button>
+        <button type="button" className="symb" onClick={() => setA(a + "-")}>
+          -
+        </button>
       </div>
       <div>
         <button type="button" onClick={() => setA(a + "7")}>
@@ -95,18 +91,21 @@ const App = () => {
         <button type="button" onClick={() => setA(a + "9")}>
           9
         </button>
+        <button type="button" className="symb" onClick={() => setA(a + "*")}>
+          *
+        </button>
       </div>
 
       <div>
-        <button onClick={() => des()}>submit</button>
+        <button onClick={() => setA("")}>clear</button>
         <button type="button" onClick={() => setA(a + "0")}>
           0
         </button>
-        <button onClick={() => setA("")}>clear</button>
-      </div>
-      
-      <div className="abo">
-        <div>{r}</div>
+
+        <button onClick={() => des()}>=</button>
+        <button type="button" className="symb" onClick={() => setA(a + "/")}>
+          /
+        </button>
       </div>
     </div>
   );
